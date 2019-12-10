@@ -17,6 +17,8 @@ This module binds to [Intl.PluralRules](https://developer.mozilla.org/en-US/docs
 
 # Support and options
 
+@docs fromLocale
+
 @docs supportedLocalesOf
 -}
 
