@@ -18,7 +18,7 @@ zones, you will need to use an [IANA time zone name](https://en.wikipedia.org/wi
 @docs utc
 -}
 
-import Native.Intl.TimeZone
+import Elm.Kernel.Intl.TimeZone
 
 
 {-| The TimeZone type holds a valid IANA time zone.
@@ -37,7 +37,7 @@ The string is matched in a case-insensitive manner.
 -}
 fromIANATimeZoneName : String -> Maybe TimeZone
 fromIANATimeZoneName =
-    Native.Intl.TimeZone.fromIANATimeZoneName
+    Elm.Kernel.Intl.TimeZone.fromIANATimeZoneName
 
 
 {-| Gets the canonicalized string time zone name from a TimeZone.

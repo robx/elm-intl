@@ -5,9 +5,9 @@ module Intl.Collator
         , fromOptions
         , compare
         , Options
-        , Usage(Sort, Search)
-        , Sensitivity(Base, Accent, Case, Variant)
-        , CaseFirst(Upper, Lower, Default)
+        , Usage(..)
+        , Sensitivity(..)
+        , CaseFirst(..)
         , defaults
         , resolvedOptions
         , supportedLocalesOf
@@ -35,7 +35,7 @@ use.
 @docs Options, Usage, Sensitivity, CaseFirst, defaults, resolvedOptions, supportedLocalesOf
 -}
 
-import Native.Intl.Collator
+import Elm.Kernel.Intl.Collator
 import Intl.Locale exposing (Locale, en)
 
 
@@ -51,7 +51,7 @@ type Collator
 -}
 fromLocale : Locale -> Collator
 fromLocale =
-    Native.Intl.Collator.fromLocale
+    Elm.Kernel.Intl.Collator.fromLocale
 
 
 {-| Create a Collator using rules from the language and other options.
@@ -71,7 +71,7 @@ fromLocale =
 -}
 fromOptions : Options -> Collator
 fromOptions =
-    Native.Intl.Collator.fromOptions
+    Elm.Kernel.Intl.Collator.fromOptions
 
 
 {-| Compare two Strings according to the sort order of the Collator.
@@ -80,7 +80,7 @@ fromOptions =
 -}
 compare : Collator -> String -> String -> Order
 compare =
-    Native.Intl.Collator.compare
+    Elm.Kernel.Intl.Collator.compare
 
 
 {-| An Options record, containing the possible settings for a Collator object.
@@ -159,7 +159,7 @@ created.
 -}
 resolvedOptions : Collator -> Options
 resolvedOptions =
-    Native.Intl.Collator.resolvedOptions
+    Elm.Kernel.Intl.Collator.resolvedOptions
 
 
 {-| Returns a list from the provided languages that are supported without having
@@ -176,4 +176,4 @@ to fall back to the runtime's default language.
 -}
 supportedLocalesOf : List Locale -> List Locale
 supportedLocalesOf =
-    Native.Intl.Collator.supportedLocalesOf
+    Elm.Kernel.Intl.Collator.supportedLocalesOf

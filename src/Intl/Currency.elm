@@ -25,7 +25,7 @@ A few currencies have been pre-defined for convenience.
 @docs usd, eur, jpy, gbp, chf, cad
 -}
 
-import Regex exposing (regex, contains)
+import Regex exposing (fromString, contains)
 import String exposing (toUpper)
 
 
@@ -49,10 +49,17 @@ the code you provided.
 -}
 fromCurrencyCode : String -> Maybe Currency
 fromCurrencyCode code =
-    if contains (regex "^[A-Za-z]{3}$") code then
-        Just (Currency (toUpper code))
-    else
-        Nothing
+    let
+        r = Regex.fromString "^[A-Za-z]{3}$"
+    in
+    case r of
+        Just regex ->
+            if contains regex code then
+                Just (Currency (toUpper code))
+            else
+                Nothing
+        Nothing ->
+            Nothing
 
 
 {-| Gets the string currency code from a Currency

@@ -25,7 +25,7 @@ A few locales have been pre-defined for convenience.
 @docs en, zhCN, zhTW, fr, de, it, ja, ko
 -}
 
-import Native.Intl.Locale
+import Elm.Kernel.Intl.Locale
 
 
 {-| The Locale type holds a valid BCP 47 language tag.
@@ -48,7 +48,7 @@ returned.
 -}
 fromLanguageTag : String -> Maybe Locale
 fromLanguageTag =
-    Native.Intl.Locale.fromLanguageTag
+    Elm.Kernel.Intl.Locale.fromLanguageTag
 
 
 {-| Gets the string language tag from a Locale

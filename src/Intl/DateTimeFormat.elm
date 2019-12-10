@@ -5,10 +5,10 @@ module Intl.DateTimeFormat
         , fromOptions
         , format
         , Options
-        , NameStyle(NarrowName, ShortName, LongName, OmitName)
-        , NumberStyle(NumericNumber, TwoDigitNumber, OmitNumber)
-        , MonthStyle(NarrowMonth, ShortMonth, LongMonth, NumericMonth, TwoDigitMonth, OmitMonth)
-        , TimeZoneStyle(ShortTimeZone, LongTimeZone, OmitTimeZone)
+        , NameStyle(..)
+        , NumberStyle(..)
+        , MonthStyle(..)
+        , TimeZoneStyle(..)
         , defaults
         , resolvedOptions
         , supportedLocalesOf
@@ -32,11 +32,11 @@ use.
 @docs Options, NameStyle, NumberStyle, MonthStyle, TimeZoneStyle, defaults, resolvedOptions, supportedLocalesOf
 -}
 
-import Native.Intl.DateTimeFormat
+import Elm.Kernel.Intl.DateTimeFormat
 import Intl.Locale exposing (Locale, en)
 import Intl.TimeZone exposing (TimeZone)
 import Maybe exposing (Maybe)
-import Date exposing (Date)
+import Time exposing (Posix)
 
 
 {-| A DateTimeFormat object, for formatting dates in a language sensitive way.
@@ -52,7 +52,7 @@ type DateTimeFormat
 -}
 fromLocale : Locale -> DateTimeFormat
 fromLocale =
-    Native.Intl.DateTimeFormat.fromLocale
+    Elm.Kernel.Intl.DateTimeFormat.fromLocale
 
 
 {-| Create a DateTimeFormat using rules from the language and other options.
@@ -70,16 +70,16 @@ fromLocale =
 -}
 fromOptions : Options -> DateTimeFormat
 fromOptions =
-    Native.Intl.DateTimeFormat.fromOptions
+    Elm.Kernel.Intl.DateTimeFormat.fromOptions
 
 
 {-| Format a Date according to the rules of the DateTimeFormat.
 
     format (fromLocale Locale.en) Date.now
 -}
-format : DateTimeFormat -> Date -> String
-format =
-    Native.Intl.DateTimeFormat.format
+format : DateTimeFormat -> Posix -> String
+format dateTimeFormat posix =
+    Elm.Kernel.Intl.DateTimeFormat.format dateTimeFormat (Time.posixToMillis posix)
 
 
 {-| An Options record, containing the possible settings for a DateTimeFormat
@@ -172,7 +172,7 @@ was created.
 -}
 resolvedOptions : DateTimeFormat -> Options
 resolvedOptions =
-    Native.Intl.DateTimeFormat.resolvedOptions
+    Elm.Kernel.Intl.DateTimeFormat.resolvedOptions
 
 
 {-| Returns a list from the provided languages that are supported without having
@@ -189,4 +189,4 @@ to fall back to the runtime's default language.
 -}
 supportedLocalesOf : List Locale -> List Locale
 supportedLocalesOf =
-    Native.Intl.DateTimeFormat.supportedLocalesOf
+    Elm.Kernel.Intl.DateTimeFormat.supportedLocalesOf

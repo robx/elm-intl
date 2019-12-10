@@ -1,10 +1,14 @@
-// import Native.Intl.Locale //
-// import Intl.Locale //
-// import Intl.Currency //
+/*
+
+import Elm.Kernel.Intl.Locale
+import Intl.Locale
+import Intl.Currency
+
+*/
 
 /* global
   F2
-  _thetalecrafter$elm_intl$Native_Intl_Locale
+  _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
   _thetalecrafter$elm_intl$Intl_Locale$Locale
   _thetalecrafter$elm_intl$Intl_Currency$Currency
   _thetalecrafter$elm_intl$Intl_NumberFormat$DecimalStyle
@@ -19,7 +23,7 @@
 /* eslint-disable camelcase */
 
 // eslint-disable-next-line
-var _thetalecrafter$elm_intl$Native_Intl_NumberFormat = function () {
+var _thetalecrafter$elm_intl$Elm.Kernel_Intl_NumberFormat = function () {
   // this will create an early error if Intl is not supported
   var NumberFormat = Intl.NumberFormat
 
@@ -125,7 +129,7 @@ var _thetalecrafter$elm_intl$Native_Intl_NumberFormat = function () {
   }
 
   function supportedLocalesOf (list) {
-    return _thetalecrafter$elm_intl$Native_Intl_Locale
+    return _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
       .supportedLocalesOf(NumberFormat, list)
   }
 

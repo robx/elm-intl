@@ -1,16 +1,20 @@
-// import Native.List //
-// import Maybe //
+/*
+
+import Elm.Kernel.List
+import Maybe
+
+*/
 
 /* global
   _elm_lang$core$Maybe$Just
   _elm_lang$core$Maybe$Nothing
-  _elm_lang$core$Native_List
+  _elm_lang$core$Elm.Kernel_List
   _thetalecrafter$elm_intl$Intl_Locale$Locale
 */
 /* eslint-disable camelcase */
 
 // eslint-disable-next-line
-var _thetalecrafter$elm_intl$Native_Intl_Locale = function () {
+var _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale = function () {
   // this will create an early error if Intl is not supported
   var checker = Intl.NumberFormat
 
@@ -46,13 +50,13 @@ var _thetalecrafter$elm_intl$Native_Intl_Locale = function () {
   }
 
   function supportedLocalesOf (object, list) {
-    var array = _elm_lang$core$Native_List.toArray(list).map(function (locale) {
+    var array = _elm_lang$core$Elm.Kernel_List.toArray(list).map(function (locale) {
       return locale._0
     })
     var supported = object.supportedLocalesOf(array).map(
       _thetalecrafter$elm_intl$Intl_Locale$Locale
     )
-    return _elm_lang$core$Native_List.fromArray(supported)
+    return _elm_lang$core$Elm.Kernel_List.fromArray(supported)
   }
 
   return {

@@ -1,9 +1,13 @@
-// import Native.Intl.Locale //
-// import Intl.Locale //
+/*
+
+import Elm.Kernel.Intl.Locale
+import Intl.Locale
+
+*/
 
 /* global
   F3
-  _thetalecrafter$elm_intl$Native_Intl_Locale
+  _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
   _thetalecrafter$elm_intl$Intl_Locale$Locale
   _thetalecrafter$elm_intl$Intl_Collator$Search
   _thetalecrafter$elm_intl$Intl_Collator$Sort
@@ -18,7 +22,7 @@
 /* eslint-disable camelcase */
 
 // eslint-disable-next-line
-var _thetalecrafter$elm_intl$Native_Intl_Collator = function () {
+var _thetalecrafter$elm_intl$Elm.Kernel_Intl_Collator = function () {
   // This will create an early error if Intl is not supported at all, and falls
   // back to a shim if Collator is missing from Intl.
   var Collator = Intl.Collator || (function () {
@@ -150,7 +154,7 @@ var _thetalecrafter$elm_intl$Native_Intl_Collator = function () {
   }
 
   function supportedLocalesOf (list) {
-    return _thetalecrafter$elm_intl$Native_Intl_Locale
+    return _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
       .supportedLocalesOf(Collator, list)
   }
 

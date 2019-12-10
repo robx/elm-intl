@@ -1,14 +1,18 @@
-// import Native.Intl.Locale //
-// import Intl.Locale //
+/*
+
+import Elm.Kernel.Intl.Locale
+import Intl.Locale
+
+*/
 
 /* global
   F2
-  _thetalecrafter$elm_intl$Native_Intl_Locale
+  _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
 */
 /* eslint-disable camelcase */
 
 // eslint-disable-next-line
-var _thetalecrafter$elm_intl$Native_Intl_PluralRules = function () {
+var _thetalecrafter$elm_intl$Elm.Kernel_Intl_PluralRules = function () {
   var PluralRules = Intl.PluralRules
 
   // Minimal dummy implementation to avoid crashes
@@ -34,7 +38,7 @@ var _thetalecrafter$elm_intl$Native_Intl_PluralRules = function () {
   }
 
   function supportedLocalesOf (list) {
-    return _thetalecrafter$elm_intl$Native_Intl_Locale
+    return _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
       .supportedLocalesOf(PluralRules, list)
   }
 

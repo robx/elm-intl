@@ -1,10 +1,14 @@
-// import Native.Intl.Locale //
-// import Intl.Locale //
-// import Intl.TimeZone //
+/*
+
+import Elm.Kernel.Intl.Locale
+import Intl.Locale
+import Intl.TimeZone
+
+*/
 
 /* global
   F2
-  _thetalecrafter$elm_intl$Native_Intl_Locale
+  _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
   _thetalecrafter$elm_intl$Intl_Locale$Locale
   _thetalecrafter$elm_intl$Intl_TimeZone$TimeZone
   _thetalecrafter$elm_intl$Intl_DateTimeFormat$NarrowName
@@ -29,7 +33,7 @@
 /* eslint-disable camelcase */
 
 // eslint-disable-next-line
-var _thetalecrafter$elm_intl$Native_Intl_DateTimeFormat = function () {
+var _thetalecrafter$elm_intl$Elm.Kernel_Intl_DateTimeFormat = function () {
   // this will create an early error if Intl is not supported
   var DateTimeFormat = Intl.DateTimeFormat
 
@@ -186,7 +190,7 @@ var _thetalecrafter$elm_intl$Native_Intl_DateTimeFormat = function () {
   }
 
   function supportedLocalesOf (list) {
-    return _thetalecrafter$elm_intl$Native_Intl_Locale
+    return _thetalecrafter$elm_intl$Elm.Kernel_Intl_Locale
       .supportedLocalesOf(DateTimeFormat, list)
   }
 

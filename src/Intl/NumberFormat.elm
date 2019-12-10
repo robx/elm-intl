@@ -5,8 +5,8 @@ module Intl.NumberFormat
         , fromOptions
         , format
         , Options
-        , Style(PercentStyle, CurrencyStyle, DecimalStyle)
-        , CurrencyDisplay(CurrencyCode, CurrencyName, CurrencySymbol)
+        , Style(..)
+        , CurrencyDisplay(..)
         , defaults
         , resolvedOptions
         , supportedLocalesOf
@@ -30,7 +30,7 @@ use.
 @docs Options, Style, CurrencyDisplay, defaults, resolvedOptions, supportedLocalesOf
 -}
 
-import Native.Intl.NumberFormat
+import Elm.Kernel.Intl.NumberFormat
 import Intl.Locale exposing (Locale, en)
 import Intl.Currency exposing (Currency, usd)
 import Maybe exposing (Maybe)
@@ -49,7 +49,7 @@ type NumberFormat
 -}
 fromLocale : Locale -> NumberFormat
 fromLocale =
-    Native.Intl.NumberFormat.fromLocale
+    Elm.Kernel.Intl.NumberFormat.fromLocale
 
 
 {-| Create a NumberFormat using rules from the language and other options.
@@ -66,7 +66,7 @@ fromLocale =
 -}
 fromOptions : Options -> NumberFormat
 fromOptions =
-    Native.Intl.NumberFormat.fromOptions
+    Elm.Kernel.Intl.NumberFormat.fromOptions
 
 
 {-| Format a number according to the rules of the NumberFormat.
@@ -75,7 +75,7 @@ fromOptions =
 -}
 format : NumberFormat -> number -> String
 format =
-    Native.Intl.NumberFormat.format
+    Elm.Kernel.Intl.NumberFormat.format
 
 
 {-| An Options record, containing the possible settings for a NumberFormat
@@ -149,7 +149,7 @@ was created.
 -}
 resolvedOptions : NumberFormat -> Options
 resolvedOptions =
-    Native.Intl.NumberFormat.resolvedOptions
+    Elm.Kernel.Intl.NumberFormat.resolvedOptions
 
 
 {-| Returns a list from the provided languages that are supported without having
@@ -166,4 +166,4 @@ to fall back to the runtime's default language.
 -}
 supportedLocalesOf : List Locale -> List Locale
 supportedLocalesOf =
-    Native.Intl.NumberFormat.supportedLocalesOf
+    Elm.Kernel.Intl.NumberFormat.supportedLocalesOf

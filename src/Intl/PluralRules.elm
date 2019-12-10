@@ -20,7 +20,7 @@ This module binds to [Intl.PluralRules](https://developer.mozilla.org/en-US/docs
 @docs supportedLocalesOf
 -}
 
-import Native.Intl.PluralRules
+import Elm.Kernel.Intl.PluralRules
 import Intl.Locale as Locale
 
 
@@ -35,7 +35,7 @@ type PluralRules
 -}
 fromLocale : Locale.Locale -> PluralRules
 fromLocale =
-    Native.Intl.PluralRules.fromLocale
+    Elm.Kernel.Intl.PluralRules.fromLocale
 
 
 {-| Given a PluralRules object and a number, returns the CLDR plural rules
@@ -43,7 +43,7 @@ category for that number
 -}
 select : PluralRules -> number -> String
 select =
-    Native.Intl.PluralRules.select
+    Elm.Kernel.Intl.PluralRules.select
 
 
 {-| Returns a list from the provided languages that are supported without having
@@ -51,4 +51,4 @@ to fall back to the runtime's default language.
 -}
 supportedLocalesOf : List Locale.Locale -> List Locale.Locale
 supportedLocalesOf =
-    Native.Intl.PluralRules.supportedLocalesOf
+    Elm.Kernel.Intl.PluralRules.supportedLocalesOf
